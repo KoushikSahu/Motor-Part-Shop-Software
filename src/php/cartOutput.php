@@ -2,14 +2,12 @@
 
     if(isset($_POST["index_to_remove"]) && $_POST["index_to_remove"] != "") {
         $key_to_remove = $_POST["index_to_remove"];
-        // echo 'index - '.$key_to_remove.':Count - ';
         if(!empty($_SESSION["cart-array"])) {
             if(count($_SESSION["cart-array"]) <= 1) {
                 unset($_SESSION["cart-array"]);
             } else {
                 unset($_SESSION["cart-array"]["$key_to_remove"]);
                 sort($_SESSION["cart-array"]);
-                // echo count($_SESSION["cart-array"]);
             }
         }
     }
@@ -41,14 +39,12 @@
         <tbody>';
         foreach ($_SESSION['cart-array'] as &$each_item) {
             
-            // echo "<h1>".$each_item['item_id']."</h1>";
             $result = pg_query($link,'select * from product where id = '.$each_item['item_id']); 
             while($row = pg_fetch_array($result)) {
             $id = $row['id'];
             $pname = $row['pname'];
             $image = $row['image'];
             $price = $row['price'];
-            // $size = $row['size'];
             }
             $total = $total + $price * $each_item['quantity'];
                 $cartOutput = $cartOutput.'<tr>

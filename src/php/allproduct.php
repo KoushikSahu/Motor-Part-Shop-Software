@@ -44,9 +44,6 @@
         $AllList = "No product available";
     }
 
-    
-
-    // pg_close($link);
 
 
 

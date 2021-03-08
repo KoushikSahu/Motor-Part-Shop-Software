@@ -74,17 +74,17 @@ session_start();
 					<div class="filter-widget">
 						<h2 class="fw-title">Categories</h2>
 						<ul class="category-menu">
-							<li><a href="category.php?category=all&gender=women">Woman wear</a>
+							<li><a href="category.php?part=all&vehicleType=4w">4-Wheeler</a>
 								<ul class="sub-menu">
-									<li><a href="category.php?category=clothing&gender=women">Clothing</a></li>
-									<li><a href="category.php?category=jewellery&gender=women">Jewellery</a></li>
-									<li><a href="category.php?category=footwear&gender=women">Footwear</a></li>
+									<li><a href="category.php?part=engine&vehicleType=4w">Engine</a></li>
+									<li><a href="category.php?part=wheel&vehicleType=4w">Wheel</a></li>
+									<li><a href="category.php?part=exhaust&vehicleType=4w">Exhaust</a></li>
 								</ul>
 							</li>
-							<li><a href="category.php?category=all&gender=men">Man Wear</a>
-								<ul class="sub-menu">
-									<li><a href="category.php?category=clothing&gender=men">Clothing</a></li>
-									<li><a href="category.php?category=footwear&gender=men">Footwear</a></li>
+							<li><a href="category.php?part=all&vehicleType=2w">2-Wheeler</a>
+								<ul class="sub-2wu">
+									<li><a href="category.php?part=wheel&vehicleType=2w">Wheel</a></li>
+									<li><a href="category.php?part=battery&vehicleType=2w">Battery</a></li>
 								</ul>
 							</li>
 						</ul>

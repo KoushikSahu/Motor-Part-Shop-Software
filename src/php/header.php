@@ -22,7 +22,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-2 text-center text-lg-left">
-                    <h3>Fachione</h3>
+                    <h3>Motor-Z</h3>
                     <!-- logo 
 						<a href="./index.html" class="site-logo">
 							<img src="img/logo.png" alt="">
@@ -30,7 +30,7 @@
                 </div>
                 <div class="col-xl-6 col-lg-5">
                     <form class="header-search-form">
-                        <input type="text" placeholder="Search on fachione ....">
+                        <input type="text" placeholder="Search on Motor-Z ....">
                         <button><i class="flaticon-search"></i></button>
                     </form>
                 </div>
@@ -57,12 +57,10 @@
             <!-- menu -->
             <ul class="main-menu">
                 <li><a href="index.php">Home</a></li>
-                <li><a href="category.php?category=all&gender=women">Women</a></li>
-                <li><a href="category.php?category=all&gender=men">Men</a></li>
-                <li><a href="category.php?category=jewellery&gender=all">Jewellery
+                <li><a href="category.php?part=all&vehicleType=4w">4 Wheeler</a></li>
+                <li><a href="category.php?part=all&vehicleType=2w">2 Wheeler
                         <span class="new">New</span>
                     </a></li>
-                <li><a href="category.php?category=footwear&gender=all">Shoes</a>
                 </li>
             </ul>
         </div>
