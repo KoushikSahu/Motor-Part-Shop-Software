@@ -49,9 +49,10 @@ if ($exists) {
 if (isset($_POST['product-name']) && $_POST['product-name'] != "") {
     $product_name = pg_escape_string($link, $_POST['product-name']);
     $price = pg_escape_string($link, $_POST['product-price']);
-    $category = pg_escape_string($link, $_POST['category']);
-    $for = pg_escape_string($link, $_POST['for']);
+    $vehicleType = pg_escape_string($link, $_POST['vehicleType']);
+    $part = pg_escape_string($link, $_POST['part']);
     $quantity = pg_escape_string($link, $_POST['quantity']);
+    $vendorID = pg_escape_string($link, $_POST['vendorID']);
 
 
     $sql = pg_query($link, "SELECT id from product where pname='" . $product_name . "'");
@@ -60,12 +61,11 @@ if (isset($_POST['product-name']) && $_POST['product-name'] != "") {
         exit();
     }
     // print_r($_POST);
-
-    $sql = pg_query($link, 'insert into product(category,gender,pname,quantity,price,added) values("' . $category . '","' . $for . '","' . $product_name . '",' . $quantity . ',' . $price . ',now()) returning id') or die(pg_last_error($link));
-    $insert_row = pg_fetch_row($res);
-    $pid = $insert_row[0];
-    $sql1 = pg_query($link, 'UPDATE product SET image = "img/single-product/' . $pid . '/" WHERE product.id = ' . $pid);
-    echo $sql1;
+    $res = pg_query($link, "select max(id) from product");
+    $row = pg_fetch_array($res);
+    $id = $row['max'];
+    $id = $id + 1;
+    $sql = pg_query($link, "insert into product(image,id,\"vehicleType\",part,pname,quantity,price,added,\"vendorID\") values('img/single-product/". $id ."/',". $id .",'" . $vehicleType . "','" . $part . "','" . $product_name . "'," . $quantity . "," . $price . ",now(), ". $vendorID .") returning id") or die(pg_last_error($link));
     $error = array();
     $extension = array("jpeg", "jpg", "png");
     $i = 1;
@@ -101,6 +101,7 @@ $product_list = '</br></br><table class="table ">
 <thead>
   <tr>
     <th scope="col">#id</th>
+    <th scope="col">Vendor ID</th>
     <th scope="col">Product Name</th>
     <th scope="col">Date Added</th>    
     <th scope="col">Remaining stock</th>
@@ -112,12 +113,14 @@ $sql = pg_query($link, "select * from product order by added DESC");
 if (pg_num_rows($sql)) {
     while ($row = pg_fetch_array($sql)) {
         $id = $row['id'];
+        $vendorID = $row['vendorID'];
         $product_name = $row['pname'];
         $price = $row['price'];
         $quantity = $row['quantity'];
         $date_added = strftime("%b %d,%Y", strtotime($row['added']));
         $product_list .= '<tr>
         <th scope="row">' . $id . '</th>
+        <td>' . $vendorID . '</td>
         <td>' . $product_name . '</td>
         <td>' . $date_added . '</td>
         <td>' . $quantity . '</td>
@@ -237,7 +240,7 @@ if (isset($_GET['yesdelete'])) {
         <div class="nano">
             <div class="nano-content">
                 <div class="logo"><a href="#">
-                        <!-- <img src="assets/images/logo.png" alt="" /> --><span>Fachione</span></a></div>
+                        <!-- <img src="assets/images/logo.png" alt="" /> --><span>Motor-Z</span></a></div>
                 <ul>
                     <li class="label">Main</li>
                     <li class="active"><a class="sidebar-sub-toggle"><i class="ti-home"></i> Dashboard <span class="badge badge-primary">1</span> <span class="sidebar-collapse-icon ti-angle-down"></span></a>
@@ -477,6 +480,19 @@ if (isset($_GET['yesdelete'])) {
 
         <div class="input-group mb-3">
             <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Vendor ID</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="vendorID" required>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+            <div class="invalid-feedback">
+                You must write the vendor ID
+            </div>
+        </div>
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
                 <span class="input-group-text" id="inputGroup-sizing-default">Product Price</span>
                 <span class="input-group-text">Rs.</span>
             </div>
@@ -491,13 +507,11 @@ if (isset($_GET['yesdelete'])) {
 
         <div class="input-group mb-3">
             <div class="input-group-prepend">
-                <label class="input-group-text" for="inputGroupSelect01">Category</label>
+                <label class="input-group-text" for="inputGroupSelect01">Vehicle Type</label>
             </div>
-            <select class="custom-select" id="inputGroupSelect01" name="category" required>
-                <!-- <option selected>Choose...</option> -->
-                <option value="clothing" selected>clothing</option>
-                <option value="footwear">footwear</option>
-                <option value="jewellery">jewellery</option>
+            <select class="custom-select" id="inputGroupSelect01" name="vehicleType" required>
+                <option value="2w" selected>2 Wheeler</option>
+                <option value="4w">4 Wheeler</option>
             </select>
             <div class="valid-feedback">
                 Looks good!
@@ -506,12 +520,14 @@ if (isset($_GET['yesdelete'])) {
 
         <div class="input-group mb-3">
             <div class="input-group-prepend">
-                <label class="input-group-text" for="inputGroupSelect01">For</label>
+                <label class="input-group-text" for="inputGroupSelect01">Part</label>
             </div>
-            <select class="custom-select" id="inputGroupSelect01" name="for" required>
+            <select class="custom-select" id="inputGroupSelect01" name="part" required>
                 <!-- <option selected>Choose...</option> -->
-                <option value="men">Men</option>
-                <option value="women" selected>Women</option>
+                <option value="engine">Engine</option>
+                <option value="battery">battery</option>
+                <option value="exhaust">Exhaust</option>
+                <option value="wheel" selected>Wheel</option>
             </select>
             <div class="valid-feedback">
                 Looks good!

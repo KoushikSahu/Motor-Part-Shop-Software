@@ -82,7 +82,7 @@ session_start();
 								</ul>
 							</li>
 							<li><a href="category.php?part=all&vehicleType=2w">2-Wheeler</a>
-								<ul class="sub-2wu">
+								<ul class="sub-menu">
 									<li><a href="category.php?part=wheel&vehicleType=2w">Wheel</a></li>
 									<li><a href="category.php?part=battery&vehicleType=2w">Battery</a></li>
 								</ul>
