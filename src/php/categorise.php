@@ -5,26 +5,16 @@
     $catList = '<div class="col-lg-9  order-1 order-lg-2 mb-5 mb-lg-0">
     <div class="row">';
 
-    if(!empty($_GET['category']) && !empty($_GET['gender'])) {
+    if(!empty($_GET['part']) && !empty($_GET['vehicleType'])) {
 
-        $category = $_GET['category'];
-        $gender = $_GET['gender'];
+        $part = $_GET['part'];
+        $vehicleType = $_GET['vehicleType'];
 
-        if($gender == 'all') {
-            $result = pg_query($link,"select * from product where category='".$category."' order by added DESC"); 
-        } else if($gender == 'women') {
-            if($category == 'all') {
-            $result = pg_query($link,"select * from product where gender='".$gender."' order by added DESC");
+        if($part == 'all') {
+            $result = pg_query($link,"select * from product where \"vehicleType\"='".$vehicleType."' order by added DESC");
             } else {
-                $result = pg_query($link,"select * from product where gender='".$gender."' and category='".$category."' order by added DESC");
+                $result = pg_query($link,"select * from product where \"vehicleType\"='".$vehicleType."' and part='".$part."' order by added DESC");
             }
-        } else if($gender == 'men') {
-            if($category == 'all') {
-            $result = pg_query($link,"select * from product where gender='".$gender."' order by added DESC");
-            } else {
-                $result = pg_query($link,"select * from product where gender='".$gender."' and category='".$category."' order by added DESC");
-            }
-        }
     if(pg_num_rows($result)>0) {
 
         while($row = pg_fetch_array($result)) {
