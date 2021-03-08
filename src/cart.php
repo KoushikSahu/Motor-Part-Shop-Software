@@ -75,10 +75,10 @@ if(isset($_POST['item_to_adjust']) && $_POST['item_to_adjust'] != "") {
 <!DOCTYPE html>
 <html lang="zxx">
 <head>
-	<title>Fachione | Cart</title>
+	<title>Motor-Z</title>
 	<meta charset="UTF-8">
-	<meta name="description" content=" Fachione | Dummy eCommerce Website">
-	<meta name="keywords" content="fachione, eCommerce, fashion, html">
+	<meta name="description" content=" Motor-Z | Dummy spare motor parts shop">
+	<meta name="keywords" content="Motor-Z, eCommerce, parts, html">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Favicon -->
 	<link href="img/favicon.ico" rel="shortcut icon"/>

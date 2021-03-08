@@ -237,7 +237,7 @@ if (isset($_GET['yesdelete'])) {
         <div class="nano">
             <div class="nano-content">
                 <div class="logo"><a href="#">
-                        <!-- <img src="assets/images/logo.png" alt="" /> --><span>Fachione</span></a></div>
+                        <!-- <img src="assets/images/logo.png" alt="" /> --><span>Motor Z</span></a></div>
                 <ul>
                     <li class="label">Main</li>
                     <li class="active"><a class="sidebar-sub-toggle"><i class="ti-home"></i> Dashboard <span class="badge badge-primary">1</span> <span class="sidebar-collapse-icon ti-angle-down"></span></a>
