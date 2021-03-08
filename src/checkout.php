@@ -185,7 +185,8 @@ else {
 						<h3>Your Cart</h3>
 						<ul class="product-list">
 
-							<?php echo $cartOutput; ?>
+    
+							<?php echo $cartOutput; $_SESSION['total'] = $total; ?>
 						
 						</ul>
 					</div>

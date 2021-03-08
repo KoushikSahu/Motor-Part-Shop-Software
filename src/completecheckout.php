@@ -9,12 +9,19 @@ if (!empty($_GET['placeOrder'])) {
     if (!empty($_SESSION['cart-array'])) {
 
         foreach ($_SESSION['cart-array'] as &$each_item) {
-            $result = pg_query($link, 'select * from product where id = ' . $each_item['item_id']);
+            $itemID = $each_item['item_id'];
+            $oQuantity = $each_item["quantity"];
+            $result = pg_query($link, 'select * from product where id = ' . $itemID);
             while ($row = pg_fetch_array($result)) {
-                $quantity = $row['quantity'] - $each_item["quantity"];
+                $quantity = $row['quantity'] - $oQuantity;
             }
+            $total = 0.2 * $_SESSION['total'];
             pg_query($link, 'update product set quantity=' . $quantity . ' where id = ' . $each_item["item_id"]);
-            pg_query($link, 'insert into orderdetail(userID,purchasedate) values(' . $userid . ',now())');
+            $res = pg_query($link, "select max(\"orderID\") from orderdetail");
+            $row = pg_fetch_array($res);
+            $id = $row['max'];
+            $id = $id + 1;
+            pg_query($link, 'insert into orderdetail("orderID","userID",purchasedate, revenue) values('. $id .',' . $userid . ',now(), '.$total.')');
             unset($_SESSION['cart-array']);
         }
     }
