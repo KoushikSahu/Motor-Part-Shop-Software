@@ -4,9 +4,5 @@ This is a basic implementation of a software to automate the tasks of a motor pa
 
 ## Usage
 
-```
-npm install
-npm start
-```
 
 ## Screenshots
