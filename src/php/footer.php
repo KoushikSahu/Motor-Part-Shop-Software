@@ -2,13 +2,13 @@
 <section class="footer-section">
 		<div class="container">
 			<div class="footer-logo text-center">
-				<h3 style="color:white;">Fachione</h3>
+				<h3 style="color:white;">Motor Z</h3>
 			</div>
 			<div class="row">
 				<div class="col-lg-3 col-sm-6">
 					<div class="footer-widget about-widget">
 						<h2>About</h2>
-						<p>Donec vitae purus nunc. Morbi faucibus erat sit amet congue mattis. Nullam frin-gilla faucibus urna, id dapibus erat iaculis ut. Integer ac sem.</p>
+						<p>Motor Z is obsessed with supplying high quality car parts at cheap cost and we believe in customer satisfication more than profit.</p>
 						<img src="img/cards.png" alt="">
 					</div>
 				</div>
@@ -34,16 +34,16 @@
 							<div class="lp-item">
 								<div class="lp-thumb set-bg" data-setbg="img/blog-thumbs/1.jpg"></div>
 								<div class="lp-content">
-									<h6>what shoes to wear</h6>
-									<span>May 21, 2020</span>
+									<h6>Choosing campatible engine</h6>
+									<span>February 21, 2021</span>
 									<a href="#" class="readmore">Read More</a>
 								</div>
 							</div>
 							<div class="lp-item">
 								<div class="lp-thumb set-bg" data-setbg="img/blog-thumbs/2.jpg"></div>
 								<div class="lp-content">
-									<h6>trends this year</h6>
-									<span>May 21, 2020</span>
+									<h6>Powerful engines this year</h6>
+									<span>February 21, 2021</span>
 									<a href="#" class="readmore">Read More</a>
 								</div>
 							</div>
@@ -55,7 +55,7 @@
 						<h2>Contact Us</h2>
 						<div class="con-info">
 							<span>C.</span>
-							<p>Fachione Pvt Ltd </p>
+							<p>Motor Z Pvt Ltd </p>
 						</div>
 						<div class="con-info">
 							<span>B.</span>
@@ -67,7 +67,7 @@
 						</div>
 						<div class="con-info">
 							<span>E.</span>
-							<p>helpdesk@fachione.com</p>
+							<p>helpdesk@motorz.com</p>
 						</div>
 					</div>
 				</div>
