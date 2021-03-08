@@ -14,12 +14,14 @@
 		} else {
 			foreach($_SESSION['cart-array'] as $each_item) {
 				$i++;
-				while(list($key,$value) = each($each_item)) {
+				while(!$wasFound) {
+					$key = key($each_item);
+					$value = current($each_item);
 					if($key == 'item_id' && $value == $pid) {
 						array_splice($_SESSION['cart-array'], $i-1, 1, array(array("item_id" => $pid, "quantity" => $each_item['quantity']+1)));
 						$wasFound=true;
-					
 					}
+					next($each_item);
 				}
 			}
 			if ($wasFound==false) {
@@ -56,12 +58,14 @@ if(isset($_POST['item_to_adjust']) && $_POST['item_to_adjust'] != "") {
 	$i=0;
 	foreach($_SESSION['cart-array'] as $each_item) {
 		$i++;
-		while(list($key,$value) = each($each_item)) {
+		while(!$wasFound) {
+			$key = key($each_item);
+			$value = current($each_item);
 			if($key == 'item_id' && $value == $item_to_adjust) {
 				array_splice($_SESSION['cart-array'], $i-1, 1, array(array("item_id" => $item_to_adjust, "quantity" => $quantity)));
 				$wasFound=true;
-			
 			}
+			next($each_item);
 		}
 	}
 }
@@ -82,7 +86,7 @@ if(isset($_POST['item_to_adjust']) && $_POST['item_to_adjust'] != "") {
 	<!-- Google Font -->
 	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,300i,400,400i,700,700i" rel="stylesheet">
 
-	<base href="https://fachione.herokuapp.com/">
+	<base href="http://localhost/motor-part-shop-software/src/">
 
 	<!-- Stylesheets -->
 	<link rel="stylesheet" href="css/bootstrap.min.css"/>
