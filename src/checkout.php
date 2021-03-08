@@ -74,7 +74,7 @@ else {
 	<!-- Google Font -->
 	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,300i,400,400i,700,700i" rel="stylesheet">
 
-	<base href="https://fachione.herokuapp.com/">
+	<base href="http://localhost/motor-part-shop-software/src/">
 
 	<!-- Stylesheets -->
 	<link rel="stylesheet" href="css/bootstrap.min.css" />

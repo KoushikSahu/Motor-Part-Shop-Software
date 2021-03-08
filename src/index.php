@@ -8,10 +8,10 @@ session_start();
 <html lang="en">
 
 <head>
-	<title>Fachione</title>
+	<title>Motor-Z</title>
 	<meta charset="UTF-8">
-	<meta name="description" content=" Fachione | Dummy eCommerce Website">
-	<meta name="keywords" content="fachione, eCommerce, fashion, html">
+	<meta name="description" content=" Motor-Z | Dummy spare motor parts shop">
+	<meta name="keywords" content="Motor-Z, eCommerce, parts, html">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Favicon -->
 	<link href="img/favicon.ico" rel="shortcut icon" />
@@ -19,7 +19,7 @@ session_start();
 	<!-- Google Font -->
 	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,300i,400,400i,700,700i" rel="stylesheet">
 
-	<base href="https://fachione.herokuapp.com/">
+	<base href="http://localhost/motor-part-shop-software/src/">
 	<!-- Stylesheets -->
 	<link rel="stylesheet" href="css/bootstrap.min.css" />
 	<link rel="stylesheet" href="css/font-awesome.min.css" />
