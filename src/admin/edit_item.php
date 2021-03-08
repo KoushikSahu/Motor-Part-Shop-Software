@@ -40,13 +40,11 @@ if (isset($_POST['product-name'])) {
     $pid = pg_escape_string($link, $_POST['thisID']);
     $product_name = pg_escape_string($link, $_POST['product-name']);
     $price = pg_escape_string($link, $_POST['product-price']);
-    $category = pg_escape_string($link, $_POST['category']);
-    $for = pg_escape_string($link, $_POST['for']);
+    $vehicleType = pg_escape_string($link, $_POST['vehicleType']);
+    $part = pg_escape_string($link, $_POST['part']);
     $quantity = pg_escape_string($link, $_POST['quantity']);
 
-    // $test = "UPDATE product set pname='$product_name', price='$price', category='$category', gender='$for', quantity='$quantity' where id=$pid";
-    // echo $test;
-    $sql = pg_query($link, "UPDATE product set pname='$product_name', price='$price', category='$category', gender='$for', quantity='$quantity' where id=$pid");
+    $sql = pg_query($link, "UPDATE product set pname='$product_name', price='$price', \"vehicleType\"='$vehicleType', part='$part', quantity='$quantity' where id=$pid");
 
     if ($_FILES["image"]["tmp_name"] != "") {
         $error = array();
@@ -89,8 +87,8 @@ if (isset($_GET['pid'])) {
         while ($row = pg_fetch_array($sql)) {
             $eproduct_name = $row['pname'];
             $eprice = $row['price'];
-            $ecategory = $row['category'];
-            $egender = $row['gender'];
+            $evehicleType = $row['vehicleType'];
+            $epart = $row['part'];
             $equantity = $row['quantity'];
         }
     }
@@ -388,13 +386,12 @@ if (isset($_GET['pid'])) {
 
         <div class="input-group mb-3">
             <div class="input-group-prepend">
-                <label class="input-group-text" for="inputGroupSelect01">Category</label>
+                <label class="input-group-text" for="inputGroupSelect01">Vehicle Type</label>
             </div>
-            <select class="custom-select" id="inputGroupSelect01" name="category" required>
-                <option value="<?php echo $ecategory; ?>" selected><?php echo $ecategory; ?></option>
-                <option value="clothing">clothing</option>
-                <option value="footwear">footwear</option>
-                <option value="jewellery">jewellery</option>
+            <select class="custom-select" id="inputGroupSelect01" name="vehicleType" required>
+                <option value="<?php echo $evehicleType; ?>" selected><?php echo $evehicleType; ?></option>
+                <option value="2w">2 Wheeler</option>
+                <option value="4w">4 Wheeler</option>
             </select>
             <div class="valid-feedback">
                 Looks good!
@@ -403,12 +400,14 @@ if (isset($_GET['pid'])) {
 
         <div class="input-group mb-3">
             <div class="input-group-prepend">
-                <label class="input-group-text" for="inputGroupSelect01">For</label>
+                <label class="input-group-text" for="inputGroupSelect01">Part</label>
             </div>
-            <select class="custom-select" id="inputGroupSelect01" name="for" required>
-                <option value="<?php echo $egender; ?>" selected><?php echo $egender; ?></option>
-                <option value="men">Men</option>
-                <option value="women">Women</option>
+            <select class="custom-select" id="inputGroupSelect01" name="part" required>
+                <option value="<?php echo $epart; ?>" selected><?php echo $epart; ?></option>
+                <option value="engine">Engine</option>
+                <option value="battery">battery</option>
+                <option value="exhaust">Exhaust</option>
+                <option value="wheel">Wheel</option>
             </select>
             <div class="valid-feedback">
                 Looks good!

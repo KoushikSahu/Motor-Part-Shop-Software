@@ -1,5 +1,4 @@
 <?php
-
     if(isset($_POST["index_to_remove"]) && $_POST["index_to_remove"] != "") {
         $key_to_remove = $_POST["index_to_remove"];
         if(!empty($_SESSION["cart-array"])) {
@@ -58,7 +57,7 @@
                 <td class="quy-col">
                     <div class="quantity">
                         <form action="cart.php" method="post" >
-                            <input name="quantity" type="text" value="'.$each_item['quantity'].'" size="1" maxlength="2">
+                            <input name="quantity" type="text" value="'.$each_item['quantity'].'" size="1" maxlength="1">
                             <input name="adjustBtn'.$id.'" type="submit" value="change" class="btn btn-light">
                             <input name="item_to_adjust" type="hidden" value="'.$id.'">
                         </form>  
@@ -85,6 +84,4 @@
                         <a href="cart.php?cmd=emptycart" class="site-btn">Empty Cart</a>
                         <a href="checkout.php" class="site-btn">Proceed to checkout</a>';
     }
-        
-    
 ?>

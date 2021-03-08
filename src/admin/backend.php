@@ -137,6 +137,82 @@ if (pg_num_rows($sql)) {
 
 <?php
 
+$alert_list = '</br></br><table class="table ">
+<thead>
+  <tr>
+    <th scope="col">Item ID</th>
+    <th scope="col">Vendor ID</th>
+    <th scope="col">Product Name</th>
+    <th scope="col">Purchase on/before</th>    
+    <th scope="col">Stocks to buy</th>
+    <th scope="col">Cost</th>
+  </tr>
+</thead>
+<tbody>';
+$sql = pg_query($link, "select * from product where quantity <= 7 order by quantity DESC");
+if (pg_num_rows($sql)) {
+    while ($row = pg_fetch_array($sql)) {
+        $id = $row['id'];
+        $vendorID = $row['vendorID'];
+        $product_name = $row['pname'];
+        $price = $row['price'];
+        $quantity = 10 - $row['quantity'];
+        $date = new DateTime(date("Y-m-d"));
+        $date->add(new DateInterval('P7D'));
+        $date = $date->format('Y-m-d');
+        $alert_list .= '<tr>
+        <th scope="row">' . $id . '</th>
+        <td>' . $vendorID . '</td>
+        <td>' . $product_name . '</td>
+        <td>' . $date . '</td>
+        <td>' . $quantity . '</td>
+        <td>' . $price * $quantity . '</td>
+      </tr>';
+    }
+    $alert_list .= '</tbody>
+    </table>';
+} else {
+    $alert_list = "Your inventory is sufficient";
+}
+
+?>
+
+<?php
+
+$order_list = '</br></br><table class="table ">
+<thead>
+  <tr>
+    <th scope="col">Order ID</th>
+    <th scope="col">User ID</th>
+    <th scope="col">Date of Purchase</th>
+    <th scope="col">Revenue Generated</th>
+  </tr>
+</thead>
+<tbody>';
+$sql = pg_query($link, "select * from orderdetail order by purchasedate DESC");
+if (pg_num_rows($sql)) {
+    while ($row = pg_fetch_array($sql)) {
+        $id = $row['orderID'];
+        $userID = $row['userID'];
+        $revenue = $row['revenue'];
+        $date = strftime("%b %d,%Y", strtotime($row['purchasedate']));
+        $order_list .= '<tr>
+        <th scope="row">' . $id . '</th>
+        <td>' . $userID . '</td>
+        <td>' . $date . '</td>
+        <td>' . $revenue . '</td>
+      </tr>';
+    }
+    $order_list .= '</tbody>
+    </table>';
+} else {
+    $order_list = "No orders have been placed";
+}
+
+?>
+
+<?php
+
 if (isset($_GET['deleteid'])) {
     echo "Are you sure you want to delete the product with ID= " . $_GET['deleteid'] . "?<a href='backend.php?yesdelete=" . $_GET['deleteid'] . "'> Yes </a> | <a href='backend.php'> No </a> ";
     exit();
@@ -458,13 +534,25 @@ if (isset($_GET['yesdelete'])) {
     </div>
 
     <div id="disp">
+        <h2>INVENTORY ALERT</h2>
+        <?php echo $alert_list; ?>
+        <br/><br/>
+    </div>
+
+    <div id="disp">
+        <h2>Orders Placed</h2>
+        <?php echo $order_list; ?>
+        <br/><br/>
+    </div>
+
+    <div id="disp">
         <h2>Items currently in Inventory</h2>
         <?php echo $product_list; ?>
     </div>
 
     <!-- inventory Input -->
     <form id="add-to-inventory" method="post" enctype="multipart/form-data" action="backend.php" class="needs-validation" novalidate>
-        <h2>Add To Inventory</br></br></h2>
+        <h2>Add New Item To Inventory</br></br></h2>
         <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <span class="input-group-text" id="inputGroup-sizing-default">Product Name</span>
