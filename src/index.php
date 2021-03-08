@@ -60,8 +60,8 @@ session_start();
 					<div class="row">
 						<div class="col-xl-6 col-lg-7 text-white">
 							<span>New Arrivals</span>
-							<h2>Jhumkas</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum sus-pendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
+							<h2>Ferrari V12 Engine</h2>
+							<p>12 cylinder piston engine with two banks of six cylinders providing unparalled performance. This engine supports state of the art fuel injection and can accelarate from 0 to 200 in just 7 seconds.</p>
 							<form class="site-btn sb-line"><a href="product.php/?id=36" >DISCOVER</a></form>
 							<a href="#">
 								<form class="site-btn sb-white" id="form1" name="form1" method="post" action="cart.php">
@@ -73,7 +73,7 @@ session_start();
 					</div>
 					<div class="offer-card text-white">
 						<span>from Rs.</span>
-						<h2>199</h2>
+						<h2>1Cr</h2>
 						<p>SHOP NOW</p>
 					</div>
 				</div>
@@ -83,8 +83,8 @@ session_start();
 					<div class="row">
 						<div class="col-xl-6 col-lg-7 text-white">
 							<span>New Arrivals</span>
-							<h2>Woodland Shoes</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum sus-pendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
+							<h2>Lamborghini V12 Engine</h2>
+							<p>2021 flagship engine from Lamborghini. With a power output of 610kW and state of the art ram air induction system, this is the most powerful engine ever built.</p>
 							<form class="site-btn sb-line"><a href="product.php/?id=43" >DISCOVER</a></form>
 							<a href="#">
 								<form class="site-btn sb-white" id="form1" name="form1" method="post" action="cart.php">
@@ -96,7 +96,7 @@ session_start();
 					</div>
 					<div class="offer-card text-white">
 						<span>from Rs.</span>
-						<h2>3325</h2>
+						<h2>2Cr</h2>
 						<p>SHOP NOW</p>
 					</div>
 				</div>
@@ -180,7 +180,7 @@ session_start();
 			<div class="banner set-bg" data-setbg="img/banner-bg.jpg">
 				<div class="tag-new">NEW</div>
 				<span>New Arrivals</span>
-				<h2>STRIPED SHIRTS</h2>
+				<h2>Bugatti W16 Engine</h2>
 				<a href="#" class="site-btn">SHOP NOW</a>
 			</div>
 		</div>
