@@ -69,8 +69,8 @@ if (isset($_POST['product-name']) && $_POST['product-name'] != "") {
     $error = array();
     $extension = array("jpeg", "jpg", "png");
     $i = 1;
-    mkdir("../img/single-product/$pid");
-    $foldername = "../img/single-product/$pid/";
+    mkdir("../img/single-product/$id");
+    $foldername = "../img/single-product/$id/";
     foreach ($_FILES["image"]["tmp_name"] as $key => $tmp_name) {
 
         $file_name = $_FILES["image"]["name"][$key];
