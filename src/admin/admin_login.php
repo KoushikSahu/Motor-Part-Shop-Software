@@ -173,20 +173,20 @@ if (array_key_exists("login", $_POST)) {
 
     <title>[ADMIN]Login / Sign Up</title>
 
-    <base href="http://localhost:8081/Fachione/">
+    <base href="http://localhost/motor-part-shop-software/src/">
 
     <!-- Styles -->
     <link href="admin/assets/css/lib/bootstrap.min.css" rel="stylesheet">
 
     <style type="text/css">
-        /* body {
-            background-image: url("assets/images/background.png");
+        body {
+            background-image: url("admin/assets/images/background.jpeg");
             height: 100%;
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
             z-index: 0;
-        } */
+        }
 
         .form-inline {
             margin: 3vw 25vw 0 17vw;
@@ -199,6 +199,11 @@ if (array_key_exists("login", $_POST)) {
 
         #sign-up {
             margin: 6vw 25vw 0 25vw;
+        }
+
+        h1, label {
+            color: #fff;
+            text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
         }
     </style>
 </head>

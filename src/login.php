@@ -193,6 +193,7 @@ if (array_key_exists("login", $_POST)) {
         #sign-up {
             margin: 6vw 25vw 0 25vw;
         }
+
         label {
             color: #fff;
             text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
