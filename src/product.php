@@ -28,7 +28,7 @@ session_start();
 	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,300i,400,400i,700,700i" rel="stylesheet">
 
 
-	<base href="http://localhost/motor-part-shop-software/src/">
+	<base href="https://motor-parts-shop.herokuapp.com/">
 
 
 	<!-- Stylesheets -->
@@ -117,33 +117,6 @@ session_start();
 					<div class="p-review">
 						<a href="">3 reviews</a>|<a href="">Add your review</a>
 					</div>
-					<div class="fw-size-choose">
-						<p>Size</p>
-						<div class="sc-item">
-							<input type="radio" name="sc" id="xs-size">
-							<label for="xs-size">32</label>
-						</div>
-						<div class="sc-item">
-							<input type="radio" name="sc" id="s-size">
-							<label for="s-size">34</label>
-						</div>
-						<div class="sc-item">
-							<input type="radio" name="sc" id="m-size" checked="">
-							<label for="m-size">36</label>
-						</div>
-						<div class="sc-item">
-							<input type="radio" name="sc" id="l-size">
-							<label for="l-size">38</label>
-						</div>
-						<div class="sc-item disable">
-							<input type="radio" name="sc" id="xl-size" disabled>
-							<label for="xl-size">40</label>
-						</div>
-						<div class="sc-item">
-							<input type="radio" name="sc" id="xxl-size">
-							<label for="xxl-size">42</label>
-						</div>
-					</div>
 					<?php if($disable) {
 						echo
 						'<button type="button" class="btn btn-danger">Out Of Stock</button>';
@@ -170,7 +143,7 @@ session_start();
 									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pharetra tempor so dales. Phasellus sagittis auctor gravida. Integer bibendum sodales arcu id te mpus. Ut consectetur lacus leo, non scelerisque nulla euismod nec.</p>
 									<p>Approx length 66cm/26" (Based on a UK size 8 sample)</p>
 									<p>Mixed fibres</p>
-									<p>The Model wears a UK size 8/ EU size 36/ US size 4 and her height is 5'8"</p>
+									<p>The displayed image is subject to change</p>
 								</div>
 							</div>
 						</div>
