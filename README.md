@@ -4,6 +4,9 @@ This is a basic implementation of a software to automate the tasks of a motor pa
 
 ## Usage
 
+To build from source: [User Manual](https://docs.google.com/document/d/1bATbbBtC2wPmFjVsbVVNemMkhSangA7FE3qBN07dGkE/edit?usp=sharing)
+
+Webapp deployed at: [Motor-Z](https://motor-parts-shop.herokuapp.com/)
 
 ## Screenshots
 
