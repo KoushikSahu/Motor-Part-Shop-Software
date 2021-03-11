@@ -24,7 +24,7 @@ if ($exists) {
         setcookie("manager", $_SESSION['manager'], time() + 3600 * 24);
         setcookie("password", $_SESSION['password'], time() + 3600 * 24);
     }
-    // header("Location: backend.php");
+    // header("Location: index.php");
 
 } else {
     // print_r($_SESSION);
@@ -71,7 +71,7 @@ if (isset($_POST['product-name'])) {
             $i++;
         }
     }
-    header("location:backend.php");
+    header("location:index.php");
     exit();
 }
 
@@ -148,7 +148,7 @@ if (isset($_GET['pid'])) {
         <div class="nano">
             <div class="nano-content">
 
-                <div class="logo"><a href="backend.php">
+                <div class="logo"><a href="index.php">
                         <span>Motor Z</span></a></div>
                 <ul>
                     <li class="label">Main</li>

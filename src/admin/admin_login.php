@@ -59,7 +59,7 @@ if (array_key_exists("login", $_POST)) {
             setcookie("manager", $_SESSION['manager'], time() + 3600 * 24);
             setcookie("password", $_SESSION['password'], time() + 3600 * 24);
         }
-        header("Location: backend.php");
+        header("Location: index.php");
     } else {
         echo "invalid username/password";
     }
