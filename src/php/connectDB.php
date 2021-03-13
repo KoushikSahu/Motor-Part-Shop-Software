@@ -1,6 +1,6 @@
 <?php
 
-$link = (function(){
+$link = (function() {
     $parts = (parse_url(getenv('DATABASE_URL')));
     extract($parts);
     $path = ltrim($path, "/");
